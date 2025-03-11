@@ -1,11 +1,11 @@
-name: test
+elname: test
 on: push
 jobs: 
   test: 
     runs-on: ubuntu-latest
     steps: 
       - run: echo "hello"
-      - run: pip install nbconvert pint matplotlib scipy
+      - run: pip install nbconvert pint matplotlib scipy ipykernel
       - uses: actions/checkout@v4
       - run: sudo apt-get install pandoc texlive-xetex inkscape
       - run: python -m nbconvert --to pdf --execute lab_01/pint_and_boiling_point.ipynb
