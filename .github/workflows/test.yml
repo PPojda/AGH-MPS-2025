@@ -5,3 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - run: echo "hello"
+      - run: pip install nbconvert
+      - uses: actions/checkout@v4
+      - run: sudo apt-get install pandoc texlive-xetex
+      - run: python -m nbconvert --to pdf lab_01/pint_and_boiling_point.ipynb
